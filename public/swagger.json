@@ -1,0 +1,738 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"SaveUpdateResClient": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"UserName": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"adress": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Name",
+					"UserName",
+					"cell",
+					"adress",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqCLIENT": {
+				"properties": {
+					"Name": {
+						"type": "string"
+					},
+					"UserName": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"adress": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"Name",
+					"UserName",
+					"cell",
+					"adress",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqCLIENT": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Name": {
+						"type": "string"
+					},
+					"UserName": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"adress": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Name",
+					"UserName",
+					"cell",
+					"adress",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LogInReq": {
+				"properties": {
+					"UserName": {
+						"type": "string"
+					},
+					"Password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"UserName",
+					"Password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveUpdateResPizza": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"PizzaName": {
+						"type": "string"
+					},
+					"Price": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"PizzaName",
+					"Price"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqPizza": {
+				"properties": {
+					"PizzaName": {
+						"type": "string"
+					},
+					"Price": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"PizzaName",
+					"Price"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqPizza": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"PizzaName": {
+						"type": "string"
+					},
+					"Price": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"PizzaName",
+					"Price"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"_LeanDocument__LeanDocument_T__": {
+				"properties": {},
+				"type": "object"
+			},
+			"Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__": {
+				"properties": {
+					"_id": {
+						"$ref": "#/components/schemas/_LeanDocument__LeanDocument_T__",
+						"description": "This documents _id."
+					},
+					"__v": {
+						"description": "This documents __v."
+					},
+					"id": {
+						"description": "The string version of this documents _id."
+					}
+				},
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_": {
+				"$ref": "#/components/schemas/Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__",
+				"description": "Construct a type with the properties of T except for those in type K."
+			},
+			"LeanDocument_this_": {
+				"$ref": "#/components/schemas/Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_"
+			},
+			"IPIZZAITEM": {
+				"$ref": "#/components/schemas/LeanDocument_this_"
+			},
+			"DeletePizza": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PizzaInterface": {
+				"properties": {
+					"pizzaId": {
+						"type": "string"
+					},
+					"Quantity": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"pizzaId",
+					"Quantity"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveUpdateResOrder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Pizza": {
+						"items": {
+							"$ref": "#/components/schemas/PizzaInterface"
+						},
+						"type": "array"
+					},
+					"ClientId": {
+						"type": "string"
+					},
+					"Delivery": {
+						"type": "number",
+						"format": "double"
+					},
+					"Bill": {
+						"type": "number",
+						"format": "double"
+					},
+					"TotalBill": {
+						"type": "number",
+						"format": "double"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"Pizza",
+					"ClientId",
+					"Delivery",
+					"Bill",
+					"TotalBill"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqOrder": {
+				"properties": {
+					"Pizza": {
+						"items": {
+							"$ref": "#/components/schemas/PizzaInterface"
+						},
+						"type": "array"
+					},
+					"ClientId": {
+						"type": "string"
+					},
+					"Delivery": {
+						"type": "number",
+						"format": "double"
+					},
+					"Bill": {
+						"type": "number",
+						"format": "double"
+					},
+					"TotalBill": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"Pizza",
+					"ClientId",
+					"Delivery",
+					"Bill",
+					"TotalBill"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqOrder": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"Pizza": {
+						"items": {
+							"$ref": "#/components/schemas/PizzaInterface"
+						},
+						"type": "array"
+					},
+					"ClientId": {
+						"type": "string"
+					},
+					"Delivery": {
+						"type": "number",
+						"format": "double"
+					},
+					"Bill": {
+						"type": "number",
+						"format": "double"
+					},
+					"TotalBill": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"_id",
+					"Pizza",
+					"ClientId",
+					"Delivery",
+					"Bill",
+					"TotalBill"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"api_key": {
+				"type": "apiKey",
+				"name": "token",
+				"in": "header"
+			}
+		}
+	},
+	"info": {
+		"title": "pizzaapi",
+		"version": "1.0.0",
+		"description": "this is for pizza shop",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {
+			"name": "Naveed"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/client/saveclient": {
+			"post": {
+				"operationId": "SaveClient",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResClient"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"client"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqCLIENT"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/client/updateclient": {
+			"put": {
+				"operationId": "UpdateAdmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResClient"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"client"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqCLIENT"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/client/getallclient": {
+			"get": {
+				"operationId": "GetAllClient",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/SaveUpdateResClient"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"client"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/client/loginUser": {
+			"post": {
+				"operationId": "LoginUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResClient"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"client"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LogInReq"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/pizza/savepizaa": {
+			"post": {
+				"operationId": "SavePizza",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResPizza"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"pizza"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqPizza"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/pizza/updatepizza": {
+			"put": {
+				"operationId": "UpdatePiza",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResPizza"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"pizza"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqPizza"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/pizza/getallpizza": {
+			"get": {
+				"operationId": "GetALLPizza",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/SaveUpdateResPizza"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"pizza"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
+		"/pizza/deletepizza": {
+			"delete": {
+				"operationId": "DeletePizza",
+				"responses": {
+					"200": {
+						"description": "Pizza Deleted",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/IPIZZAITEM"
+										},
+										{
+											"properties": {
+												"_id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"_id"
+											],
+											"type": "object"
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"pizza"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DeletePizza"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/saveorder": {
+			"post": {
+				"operationId": "SaveOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResOrder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"order"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqOrder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/updateorder": {
+			"put": {
+				"operationId": "UpdateOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResOrder"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"order"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqOrder"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/order/getorder": {
+			"get": {
+				"operationId": "GetOrder",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/SaveUpdateResOrder"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"order"
+				],
+				"security": [
+					{
+						"api_key": []
+					}
+				],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
